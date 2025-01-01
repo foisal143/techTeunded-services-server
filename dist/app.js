@@ -14,6 +14,7 @@ app.use((0, cors_1.default)({
     origin: [
         'https://tech-tuned-services-frontend.vercel.app',
         'http://localhost:5173',
+        'https://seoideaplanet.com',
     ],
     credentials: true,
 }));

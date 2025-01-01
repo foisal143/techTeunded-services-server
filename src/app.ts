@@ -12,6 +12,7 @@ app.use(
     origin: [
       'https://tech-tuned-services-frontend.vercel.app',
       'http://localhost:5173',
+      'https://seoideaplanet.com',
     ],
     credentials: true,
   })
