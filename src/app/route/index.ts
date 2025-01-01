@@ -26,7 +26,7 @@ const routes = [
     route: authRouter,
   },
   {
-    path: '/cart',
+    path: '/carts',
     route: cartRouter,
   },
   {
