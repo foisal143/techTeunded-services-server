@@ -3,6 +3,6 @@ export type TUser = {
   email: string;
   phone: string;
   role: string;
-  isDeleted: boolean;
   password: string;
+  isDeleted: boolean;
 };

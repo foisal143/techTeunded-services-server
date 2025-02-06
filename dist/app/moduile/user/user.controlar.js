@@ -40,4 +40,28 @@ const getSingleUser = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, 
         data,
     });
 }));
-exports.userControlar = { createUser, getAllUser, getSingleUser };
+const deleteUser = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const email = req.params.email;
+    const data = yield user_services_1.userServices.deleteUser(email);
+    res.send({
+        success: true,
+        message: 'User is deleted  successfull',
+        data,
+    });
+}));
+const makeAdmin = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const email = req.params.email;
+    const data = yield user_services_1.userServices.makeAdmin(email);
+    res.send({
+        success: true,
+        message: 'User is promoted to admin ',
+        data,
+    });
+}));
+exports.userControlar = {
+    createUser,
+    getAllUser,
+    getSingleUser,
+    deleteUser,
+    makeAdmin,
+};

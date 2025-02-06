@@ -23,8 +23,18 @@ const getSingleService = (id) => __awaiter(void 0, void 0, void 0, function* () 
     const result = yield servic_model_1.Service.findById(id);
     return result;
 });
+const updateServices = (id, serviceIno) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield servic_model_1.Service.findByIdAndUpdate(id, serviceIno);
+    return result;
+});
+const deleteServices = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield servic_model_1.Service.findByIdAndDelete(id);
+    return result;
+});
 exports.serviceServices = {
     createService,
     getAllService,
     getSingleService,
+    updateServices,
+    deleteServices,
 };

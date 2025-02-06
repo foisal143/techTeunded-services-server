@@ -11,4 +11,6 @@ serviceRouter.post(
 );
 serviceRouter.get('/', servicControlar.getAllService);
 serviceRouter.get('/:serviceId', servicControlar.getSingleService);
+serviceRouter.delete('/:serviceId', servicControlar.deleteServices);
+serviceRouter.patch('/:serviceId', servicControlar.updateServices);
 export default serviceRouter;

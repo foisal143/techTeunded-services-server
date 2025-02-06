@@ -11,4 +11,6 @@ const serviceRouter = express_1.default.Router();
 serviceRouter.post('/', (0, validateRequest_1.default)(service_validation_1.serviceValidation.createServiceSchema), service_controlar_1.servicControlar.createService);
 serviceRouter.get('/', service_controlar_1.servicControlar.getAllService);
 serviceRouter.get('/:serviceId', service_controlar_1.servicControlar.getSingleService);
+serviceRouter.delete('/:serviceId', service_controlar_1.servicControlar.deleteServices);
+serviceRouter.patch('/:serviceId', service_controlar_1.servicControlar.updateServices);
 exports.default = serviceRouter;

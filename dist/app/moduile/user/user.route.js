@@ -11,4 +11,6 @@ const userRouter = express_1.default.Router();
 userRouter.post('/', (0, validateRequest_1.default)(user_validation_1.userValidation.createuserValidation), user_controlar_1.userControlar.createUser);
 userRouter.get('/', user_controlar_1.userControlar.getAllUser);
 userRouter.get('/:id', user_controlar_1.userControlar.getSingleUser);
+userRouter.put('/:email', user_controlar_1.userControlar.deleteUser);
+userRouter.patch('/:email', user_controlar_1.userControlar.makeAdmin);
 exports.default = userRouter;

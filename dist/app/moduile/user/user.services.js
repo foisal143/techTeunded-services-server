@@ -25,11 +25,25 @@ const createUser = (payload) => __awaiter(void 0, void 0, void 0, function* () {
     return result;
 });
 const getAllUser = () => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield user_model_1.User.find();
+    const result = yield user_model_1.User.find({ isDeleted: false });
     return result;
 });
 const getSingleUser = (id) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield user_model_1.User.findById(id);
     return result;
 });
-exports.userServices = { createUser, getAllUser, getSingleUser };
+const deleteUser = (email) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield user_model_1.User.findOneAndUpdate({ email }, { isDeleted: true });
+    return result;
+});
+const makeAdmin = (email) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield user_model_1.User.findOneAndUpdate({ email }, { role: 'admin' });
+    return result;
+});
+exports.userServices = {
+    createUser,
+    getAllUser,
+    getSingleUser,
+    deleteUser,
+    makeAdmin,
+};

@@ -41,8 +41,29 @@ const getSingleService = (0, catchAsync_1.default)((req, res) => __awaiter(void 
         data,
     });
 }));
+const updateServices = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const id = req.params.serviceId;
+    const serviceInfo = req.body;
+    const data = yield service_services_1.serviceServices.updateServices(id, serviceInfo);
+    res.send({
+        success: true,
+        message: 'Service is updated  successfull',
+        data,
+    });
+}));
+const deleteServices = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const id = req.params.serviceId;
+    const data = yield service_services_1.serviceServices.deleteServices(id);
+    res.send({
+        success: true,
+        message: 'Service is deleted  successfull',
+        data,
+    });
+}));
 exports.servicControlar = {
     createService,
     getAllService,
     getSingleService,
+    updateServices,
+    deleteServices,
 };
