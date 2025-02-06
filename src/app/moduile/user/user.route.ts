@@ -12,4 +12,6 @@ userRouter.post(
 
 userRouter.get('/', userControlar.getAllUser);
 userRouter.get('/:id', userControlar.getSingleUser);
+userRouter.put('/:email', userControlar.deleteUser);
+userRouter.patch('/:email', userControlar.makeAdmin);
 export default userRouter;

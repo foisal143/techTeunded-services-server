@@ -14,7 +14,7 @@ const createUser = async (payload: TUser) => {
 };
 
 const getAllUser = async () => {
-  const result = await User.find();
+  const result = await User.find({ isDeleted: false });
   return result;
 };
 
@@ -22,4 +22,19 @@ const getSingleUser = async (id: string) => {
   const result = await User.findById(id);
   return result;
 };
-export const userServices = { createUser, getAllUser, getSingleUser };
+
+const deleteUser = async (email: string) => {
+  const result = await User.findOneAndUpdate({ email }, { isDeleted: true });
+  return result;
+};
+const makeAdmin = async (email: string) => {
+  const result = await User.findOneAndUpdate({ email }, { role: 'admin' });
+  return result;
+};
+export const userServices = {
+  createUser,
+  getAllUser,
+  getSingleUser,
+  deleteUser,
+  makeAdmin,
+};

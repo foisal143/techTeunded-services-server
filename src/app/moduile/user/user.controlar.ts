@@ -28,5 +28,29 @@ const getSingleUser = catchAsinc(async (req, res) => {
     data,
   });
 });
+const deleteUser = catchAsinc(async (req, res) => {
+  const email = req.params.email;
+  const data = await userServices.deleteUser(email);
+  res.send({
+    success: true,
+    message: 'User is deleted  successfull',
+    data,
+  });
+});
+const makeAdmin = catchAsinc(async (req, res) => {
+  const email = req.params.email;
+  const data = await userServices.makeAdmin(email);
+  res.send({
+    success: true,
+    message: 'User is promoted to admin ',
+    data,
+  });
+});
 
-export const userControlar = { createUser, getAllUser, getSingleUser };
+export const userControlar = {
+  createUser,
+  getAllUser,
+  getSingleUser,
+  deleteUser,
+  makeAdmin,
+};

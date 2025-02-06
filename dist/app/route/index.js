@@ -29,7 +29,7 @@ const routes = [
         route: auth_route_1.default,
     },
     {
-        path: '/cart',
+        path: '/carts',
         route: cart_route_1.default,
     },
     {
